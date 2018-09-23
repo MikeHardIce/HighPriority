@@ -7,6 +7,6 @@ Little console app that can change the process priority. I use this to improve t
 3. Execute (to stop either write exit or close)
 
 # Example content priority.ini
-HeroesOfTheStorm_x64=High
-Overwatch=High
+HeroesOfTheStorm_x64=High\n
+Overwatch=High\n
 QuakeChampions=High
