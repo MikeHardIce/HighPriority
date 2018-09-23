@@ -45,8 +45,6 @@ namespace HighPriority
                 {
                     currProcess.PriorityClass = process.priority;
 
-                    //log.Add((currProcess.ProcessName, process.priority.ToString()));
-
                     Console.WriteLine($"{currProcess.ProcessName} set to {currProcess.PriorityClass}");
                 }
             }   
@@ -63,19 +61,17 @@ namespace HighPriority
 
                 foreach(var line in lines)
                 {
-                    if(TryParsePriority(line, out (string name, ProcessPriorityClass priority) prio))
+                    if(TryParsePriorityLine(line, out (string name, ProcessPriorityClass priority) prio))
                     {
                         priorities.Add(prio);
                     }
                 }
-                
-
             }
 
             return priorities;
         }
 
-        private static bool TryParsePriority ( string line, out (string name, ProcessPriorityClass priority) priority)
+        private static bool TryParsePriorityLine ( string line, out (string name, ProcessPriorityClass priority) priority)
         {
             var success     = false;
             priority        = ("", ProcessPriorityClass.Normal);
