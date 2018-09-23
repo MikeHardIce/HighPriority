@@ -96,7 +96,7 @@ namespace HighPriority
             var success = true;
             priority    = ProcessPriorityClass.Normal;
 
-            switch(name.ToLower())
+            switch(name.ToLower().Trim())
             {
                 case "high":        priority = ProcessPriorityClass.High; break;
                 case "abovenormal": priority = ProcessPriorityClass.AboveNormal; break;
